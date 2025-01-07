@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './login'; // Use PascalCase for components
 import Home from './home'; // Use PascalCase for components
 
+
+
+
 function App() {
+  
   return (
     <Router>
       <Routes>
