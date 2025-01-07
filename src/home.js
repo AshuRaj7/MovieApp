@@ -15,9 +15,11 @@ const App = () => {
     <Header toggleSidebar={toggleSidebar} />
   <div className="flex h-full">
     {isSidebarVisible && <Sidebar />}
-       
+    
     </div>
+    
    </div>
+
    
   );
 };
