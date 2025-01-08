@@ -31,13 +31,13 @@ const Sidebar = () => {
       <h3 className="text-lg font-bold uppercase mt-10 mb-6 text-pink">Technology</h3>
       <ul className="space-y-2">
         <li>
-          <a
+          <button
             onClick={() => setShowAppMenu(!showAppMenu)}
             className="flex items-center justify-between cursor-pointer text-gray-200 py-2 px-4 rounded-lg hover:bg-gray-700 transition duration-200 ease-in-out"
           >
-            _App
+            App
             <span>{showAppMenu ? '-' : '+'}</span>
-          </a>
+          </button>
           {showAppMenu && (
             <ul className="pl-6 mt-2 space-y-2">
               <li>

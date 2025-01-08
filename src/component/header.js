@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ toggleSidebar }) => {
+const Header = ({ toggleSidebar, query, setQuery, handleSearch }) => {
   return (
     <header className="flex items-center bg-black text-white p-4 shadow-lg">
       {/* Toggle Sidebar Button */}
@@ -16,18 +16,19 @@ const Header = ({ toggleSidebar }) => {
         <div className="flex flex-col sm:flex-row items-center bg-gray-700 rounded-lg overflow-hidden p-2 sm:p-0">
           <input
             type="search"
-            placeholder="Search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search for a movie..."
             className="bg-gray-700 text-white placeholder-gray-400 px-4 py-2 focus:outline-none w-full sm:w-64"
           />
-          
-          
         </div>
         <button
-            className="text-black font-bold bg-white mt-2 sm:mt-0 sm:ml-2 px-4 py-2 rounded-lg hover:bg-green-400 transition duration-300 ease-in-out"
-            style={{ fontSize: 16 }}
-          >
-            Go
-          </button>
+          className="text-black font-bold bg-white mt-2 sm:mt-0 sm:ml-2 px-4 py-2 rounded-lg hover:bg-green-400 transition duration-300 ease-in-out"
+          style={{ fontSize: 16 }}
+          onClick={handleSearch}
+        >
+          Go
+        </button>
       </div>
     </header>
   );
