@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Header = ({ toggleSidebar, query, setQuery, handleSearch }) => {
+const Header = ({ toggleSidebar, query, setQuery, handleSearch, handleSearchChange, handleKeyDown, setIsFocused }) => {
   return (
     <header className="flex items-center bg-black text-white p-4 shadow-lg">
       {/* Toggle Sidebar Button */}
@@ -17,9 +15,12 @@ const Header = ({ toggleSidebar, query, setQuery, handleSearch }) => {
           <input
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleSearchChange}
+            onKeyDown={handleKeyDown}
             placeholder="Search for a movie..."
             className="bg-gray-700 text-white placeholder-gray-400 px-4 py-2 focus:outline-none w-full sm:w-64"
+            onFocus={() => setIsFocused(true)} // Set focus on input
+            onBlur={() => setIsFocused(false)}  // Set focus off input
           />
         </div>
         <button

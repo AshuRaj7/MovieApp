@@ -10,20 +10,20 @@ const Sidebar = () => {
       <h3 className="text-lg font-bold uppercase mb-6 text-pink">My Workspace</h3>
       <ul className="space-y-2">
         <li>
-          <a
+          <button
             className="flex items-center justify-between cursor-pointer text-gray-400 py-2 px-4 rounded-lg hover:bg-gray-700 transition duration-200 ease-in-out"
           >
             Tasks
             <span className="bg-blue px-2 py-1 rounded-full text-xs text-white"></span>
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
             className="flex items-center justify-between cursor-pointer text-gray-400 py-2 px-4 rounded-lg hover:bg-gray-700 transition duration-200 ease-in-out"
           >
             Channel
             <span className="bg-green px-2 py-1 rounded-full text-xs text-white"></span>
-          </a>
+          </button>
         </li>
       </ul>
 
@@ -60,13 +60,13 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <a
+          <button
             onClick={() => setShowHomeMenu(!showHomeMenu)}
             className="flex items-center justify-between cursor-pointer text-gray-200 py-2 px-4 rounded-lg hover:bg-gray-700 transition duration-200 ease-in-out"
           >
             Home
             <span>{showHomeMenu ? '-' : '+'}</span>
-          </a>
+          </button>
           {showHomeMenu && (
             <ul className="pl-6 mt-2 space-y-2">
               <li>
