@@ -95,8 +95,9 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleMovieClick = (movie) => {
+    setSelectedMovie(movie);
     navigate(`/movie/${movie.imdbID}`);
-    console.log(7,movie.imdbID)
+    // console.log(7,movie.imdbID)
 
   }; 
   
@@ -153,18 +154,27 @@ const Home = () => {
 
           {/* Suggestions dropdown */}
           {suggestions.length > 0 && query && isFocused && (
-            <div className="absolute top-0 left-0 right-0 bg-gray-800 rounded-lg shadow-lg mt-2 z-10 max-h-60 overflow-y-auto">
+            <div  className="absolute top-0 left-0 right-0 bg-gray-800 rounded-lg shadow-lg mt-2 z-10 max-h-60 overflow-y-auto">
               <ul>
                 {suggestions.map((movie) => (
                   <li
-                    key={movie.imdbID}
-                    className="text-gray-300 hover:text-white cursor-pointer px-4 py-2"
-                    onClick={() => {
-                      setQuery(movie.Title);
-                      handleMovieClick(movie); // Trigger movie click
+                    
+                     key={movie.imdbID}
+                     className="text-gray-300 hover:text-white cursor-pointer px-4 py-2"
+                    // onClick={(e) => {
+                    //   setQuery(movie.Title);
+                    //   handleMovieClick(movie);
+                    //   console.log("ghgjhg",movie) // Trigger movie click
+                    // }}
+                  >
+                  <button
+                    onMouseDown={() => {
+                      handleMovieClick(movie);
+                      console.log('Clicked movie:', movie);
                     }}
                   >
                     {movie.Title}
+                  </button>
                   </li>
                 ))}
               </ul>

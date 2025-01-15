@@ -56,9 +56,9 @@ const MovieDetail = () => {
 //   }
 
   return (
-    <div className="flex flex-col bg-gray-900 text-white p-4">
-      <Link to="/" className="text-green-400 hover:text-green-500 mb-4">
-        Back to Search
+    <div className="flex flex-col bg-gray-900 text-white p-4 ">
+      <Link to="/home" className="text-white hover:text-green-300 font-bold mb-4 w-40">
+        {"<-"}<u>Back-to-Search</u>
       </Link>
       <div className="flex flex-col sm:flex-row items-center bg-gray-800 p-4 rounded-lg shadow-lg">
         <img
@@ -69,7 +69,7 @@ const MovieDetail = () => {
         <div className="flex flex-col sm:w-1/2">
           <h2 className="text-3xl font-bold">{movie.Title}</h2>
           <p className="text-lg text-gray-400">{movie.Year}</p>
-          <p className="text-xl mt-2 font-semibold">Rating: {movie.imdbRating}</p>
+          <p className="text-xl mt-2 font-semibold">Rating: {movie.imdbRating} /10.0</p>
           <p className="mt-2">{movie.Plot}</p>
           <p className="mt-2"><strong>Actors:</strong> {movie.Actors}</p>
           <p className="mt-2"><strong>Genre:</strong> {movie.Genre}</p>
