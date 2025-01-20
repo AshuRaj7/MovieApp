@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchDefaultMovies = async () => {
       try {
-        const response = await axios.get(`http://www.omdbapi.com/?s=Batman&apikey=64bfe6bb`);
+        const response = await axios.get(`http://www.omdbapi.com/?s=Shinchan&apikey=64bfe6bb`);
         if (response.data.Search) {
           setMovies(response.data.Search);
         }
@@ -101,15 +101,7 @@ const Home = () => {
 
   }; 
   
-  // Fetch detailed movie info
-  // const handleMovieClick = async (movieId) => {
-  //   try {
-  //     const response = await axios.get(`http://www.omdbapi.com/?i=${movieId}&apikey=64bfe6bb`);
-  //     setSelectedMovie(response.data); // Set the selected movie details
-  //   } catch (error) {
-  //     console.error('Error fetching movie details:', error);
-  //   }
-  // };
+
 
   return (
     <div className="flex flex-col h-screen bg-gray-900">
@@ -161,11 +153,7 @@ const Home = () => {
                     
                      key={movie.imdbID}
                      className="text-gray-300 hover:text-white cursor-pointer px-4 py-2"
-                    // onClick={(e) => {
-                    //   setQuery(movie.Title);
-                    //   handleMovieClick(movie);
-                    //   console.log("ghgjhg",movie) // Trigger movie click
-                    // }}
+
                   >
                   <button
                     onMouseDown={() => {

@@ -1,6 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
 const Header = ({ toggleSidebar, query, setQuery, handleSearch, handleSearchChange, handleKeyDown, setIsFocused }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      // Clear session storage
+      sessionStorage.clear();
+
+      // Redirect to the login page
+      navigate("/login");
+    }
+  };
+
   return (
-    <header className="flex items-center bg-black text-white p-4 shadow-lg">
+    <header className="flex items-center justify-between bg-black text-white p-4 shadow-lg">
       {/* Toggle Sidebar Button */}
       <button
         className="text-2xl text-white bg-black-900 rounded-lg p-2 hover:bg-gray-800 transition duration-300 ease-in-out"
@@ -28,9 +43,17 @@ const Header = ({ toggleSidebar, query, setQuery, handleSearch, handleSearchChan
           style={{ fontSize: 16 }}
           onClick={handleSearch}
         >
-          Go
+          Search
         </button>
       </div>
+
+      {/* Logout Button */}
+      <button
+        className="text-black font-bold bg-red-900 px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300 ease-in-out"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
     </header>
   );
 };

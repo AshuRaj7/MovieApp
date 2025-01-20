@@ -13,6 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} /> {/* Use JSX syntax for elements */}
+        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} /> {/* Use JSX syntax for elements */}
         {/* <Route path='/home' element={<home movies={movies} />} /> */}
         < Route path="/movie/:imdbID" element={<MovieDetail /> } />
