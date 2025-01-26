@@ -54,7 +54,11 @@ function LoginPage() {
   };
 
   return (
+    <div style={styles.back} className='font-bold text-2xl  p-2 overflow-hidden '>
+    <h1 className='flex text-gray-400 justify-top items-left'>MovieMania</h1>
+   
     <div style={styles.container}>
+      
       <div style={styles.formContainer}>
         <h1 className="text-black " style={styles.title}>
           <b>
@@ -97,16 +101,25 @@ function LoginPage() {
         </form>
       </div>
     </div>
+    </div>
   );
 }
 
 const styles = {
+  back :{
+    backgroundImage: "url('./login.jpg ')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    overflow: 'hidden',
+    height: '100vh',
+    
+  },
   container: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundImage: "url('./login.jpg ')", // Replace with your image URL
+     // Replace with your image URL
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     padding: '10px',

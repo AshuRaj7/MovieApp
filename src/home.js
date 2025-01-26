@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchDefaultMovies = async () => {
       try {
-        const response = await axios.get(`http://www.omdbapi.com/?s=Shinchan&apikey=64bfe6bb`);
+        const response = await axios.get(`http://www.omdbapi.com/?s=spider&apikey=64bfe6bb`);
         if (response.data.Search) {
           setMovies(response.data.Search);
         }
@@ -158,7 +158,7 @@ const Home = () => {
                   <button
                     onMouseDown={() => {
                       handleMovieClick(movie);
-                      console.log('Clicked movie:', movie);
+                      // console.log('Clicked movie:', movie);
                     }}
                   >
                     {movie.Title}

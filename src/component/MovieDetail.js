@@ -31,29 +31,7 @@ const MovieDetail = () => {
     return <div className="text-center text-white">No movie details available.</div>;
   }
 
-// const MovieDetail = () => {
-//   const { id } = useParams();
-//   const [movie, setMovie] = useState(null);
-//   const [loading, setLoading] = useState(true);
 
-//   useEffect(() => {
-//     const fetchMovieDetails = async () => {
-//       try {
-//         const response = await axios.get(`http://www.omdbapi.com/?i=${id}&apikey=64bfe6bb`);
-//         setMovie(response.data);
-//         setLoading(false);
-//       } catch (error) {
-//         console.error('Error fetching movie details:', error);
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchMovieDetails();
-//   }, [id]);
-
-//   if (loading) {
-//     return <div className="text-center text-white">Loading movie details...</div>;
-//   }
 
   return (
     <div className="flex flex-col bg-gray-900 text-white p-4 ">
