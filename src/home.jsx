@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './component/sidebar';
 import Header from './component/header';
@@ -37,7 +37,7 @@ const Home = () => {
     };
 
     fetchDefaultMovies();
-  }, []);
+  }, [API_URL]);
 
   const handleSearchChange = (e) => {
     const value = e.target.value;

@@ -30,7 +30,7 @@ const MovieDetail = () => {
     };
 
     fetchMovieDetails();
-  }, [imdbID]);  // Run the effect whenever imdbID changes
+  }, [imdbID,API_URL]);  // Run the effect whenever imdbID changes
 
   if (loading) {
     return <div className="flex justify-center items-center h-screen text-white text-xl">Loading movie details...</div>;
@@ -45,7 +45,7 @@ const MovieDetail = () => {
   }
 
   return (
-    <div className="flex flex-col bg-gray-900 text-white p-4 min-h-screen">
+    <div className="flex flex-col bg-gray-900 text-white p-4 h-90">
       <Link to="/home" className="text-white hover:text-green-300 font-bold mb-4">
         {"←"} <u>Back to Search</u>
       </Link>
